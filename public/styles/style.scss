@@ -457,7 +457,7 @@ body {
 // MOBILE
 @media only screen and (max-width: 768px) {
     body {
-        background-image: url("./assets/images/mobile-background.jpg");
+        background-image: url("../assets/images/mobile-background.jpg");
         background-size: 100%;
         background-repeat: no-repeat;
         background-color: #ffc171;
@@ -739,6 +739,7 @@ body {
         // margin-top: 45%;
         text-align: center;
         padding-top: 3.66rem;
+        position: relative;
 
         .slide-wraper {
             width: 100%;
@@ -756,6 +757,21 @@ body {
             font-size: 1.2rem;
             margin-bottom: 4.33rem;
             direction: rtl;
+        }
+
+        #arrow-left {
+            position: absolute;
+            top: 60%;
+            left: 10px;
+            width: 20px;
+        
+        }
+
+        #arrow-right {
+            position: absolute;
+            top: 60%;
+            right: 10px;
+            width: 20px;
         }
 
         .navigation-wrapper {
@@ -794,19 +810,6 @@ body {
                 }
             }
 
-            #arrow-left {
-                position: absolute;
-                top: 50%;
-                left: -30px;
-                width: 20px;
-            }
-
-            #arrow-right {
-                position: absolute;
-                top: 50%;
-                right: -30px;
-                width: 20px;
-            }
         }
     }
 

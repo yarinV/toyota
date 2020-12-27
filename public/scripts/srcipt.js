@@ -383,8 +383,9 @@ function toggleMobileMenu(state) {
 }
 
 // INIT
-// $('#upload').height($('.lead-wrapper').height());
-$('.lead-wrapper').height($('#upload').height());
+if( screen.width > 768 ){
+    $('.lead-wrapper').height($('#upload').height());
+}
 
 handleScroll(window.scrollY);
 $('#arrow-left').hide();
