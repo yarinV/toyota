@@ -43,7 +43,6 @@ body {
         width: 100%;
         max-width: 1920px;
         box-sizing: border-box;
-        background: rgba(187, 187, 191, 0.2);
         position: fixed;
         z-index: 3;
         margin: auto;
@@ -53,6 +52,10 @@ body {
 
         &.black {
             background: rgba(0, 0, 0, 0.4);
+
+            .logo{
+                width: 4.5%;
+            }
         }
         .logo {
             float: left;
@@ -64,7 +67,7 @@ body {
             .menu-item {
                 display: inline-block;
                 padding-bottom: 10px;
-                margin-left: 2rem;
+                margin-left: 4rem;
                 &.active {
                     border-bottom: 5px solid #ff0022;
                 }
@@ -115,7 +118,7 @@ body {
         }
         .instructions {
             display: flex;
-            margin-top: 14%;
+            margin-top: 15%;
             color: #000;
             min-height: 350px;
             padding-top: 3%;
@@ -165,7 +168,7 @@ body {
         }
         .title {
             display: inline-block;
-            font-size: 2em;
+            font-size: 3em;
             vertical-align: top;
             margin-left: 6%;
         }
@@ -204,7 +207,7 @@ body {
             display: inline-block;
             margin-left: 4%;
             position: relative;
-            width: 24%;
+            width: 20%;
             .preview {
                 width: 100%;
                 height: 546px;
@@ -212,7 +215,7 @@ body {
                 background-position: center center;
                 background-repeat: no-repeat;
                 background-color: #fff;
-                background-size: 70%;
+                // background-size: 70%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -247,7 +250,7 @@ body {
                 margin-top: 26px;
                 font-size: 2em;
                 text-align: center;
-                padding: 10px 0;
+                padding: 0.6em 0;
                 box-sizing: border-box;
                 &.error {
                     border: 3px solid red;
@@ -260,7 +263,7 @@ body {
         .lead-wrapper {
             display: inline-block;
             vertical-align: top;
-            width: 25%;
+            width: 22%;
             .form-text {
                 font-size: 1.9em;
                 margin-bottom: 30px;
@@ -303,7 +306,7 @@ body {
                 margin-top: 26px;
                 font-size: 2em;
                 text-align: center;
-                padding: 10px 0;
+                padding: 0.6em 0;
                 background: #ff0022;
             }
         }
@@ -320,14 +323,26 @@ body {
             .keen-slider__slide {
                 display: flex;
                 flex-direction: column;
-                padding: 0 1em;
+                // padding: 0 1em;
+                position: relative;
             }
+
+              /* the slides */
+            .slick-slide {
+                margin: 0 27px;
+            }
+            /* the parent */
+            .slick-list {
+                margin: 0 -27px;
+            }        
 
             img {
                 display: block;
                 margin: auto;
                 width: 100%;
                 max-height: 35rem;
+                padding-bottom: 38.5px;
+                box-sizing: border-box;
             }
             .user_name {
                 width: 100%;
@@ -337,6 +352,8 @@ body {
                 font-size: 1.3rem;
                 padding: 0.5em 0;
                 margin: auto;
+                position: absolute;
+                bottom: 0;
             }
         }
 
@@ -421,7 +438,6 @@ body {
         height: 100px;
         width: 100%;
         direction: rtl;
-        margin-bottom: 10px;
         .red-bar {
             width: 57.8125%;
             height: 15px;
@@ -435,7 +451,7 @@ body {
             z-index: -1;
             .hamburger {
                 z-index: 0;
-                // margin-top: 50px;
+                width: 10%;
             }
 
             .wrapper {
@@ -476,7 +492,7 @@ body {
             }
             .logo {
                 float: left;
-                // margin-top: 40px;
+                width: 15%;
             }
             .menu-item {
                 text-align: center;
@@ -515,7 +531,7 @@ body {
         }
         h2 {
             text-align: center;
-            font-size: 1.46rem;
+            font-size: 1.3rem;
             font-weight: 500;
         }
         .car-logo {
@@ -543,16 +559,16 @@ body {
                 .title {
                     margin-bottom: 15px;
                     font-weight: bold;
-                    font-size: 1.46rem;
+                    font-size: 1.2rem;
                 }
                 .content {
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                 }
                 .link-wrapper {
                     margin-top: 30px;
                     .link {
                         display: inline-block;
-                        width: 35%;
+                        width: 40%;
                         img {
                             width: 100%;
                         }
@@ -565,12 +581,12 @@ body {
         color: #040404;
         text-align: center;
         .title {
-            font-size: 2.33rem;
+            font-size: 1.8rem;
             margin-bottom: 5%;
         }
         .error_message {
             color: #000;
-            font-size: 1.2em;
+            font-size: 1.1em;
             text-align: right;
             width: 80%;
             margin: auto;
@@ -638,7 +654,7 @@ body {
             .form-text {
                 text-align: right;
                 color: #040404;
-                font-size: 1.633rem;
+                font-size: 1.3rem;
                 width: 80%;
                 margin: auto;
                 margin-bottom: 10%;
@@ -646,10 +662,12 @@ body {
         }
         .input {
             width: 80%;
-            font-size: 1.633rem;
+            font-size: 1.3rem;
             padding: 10px 20px;
             box-sizing: border-box;
             margin-bottom: 2.5%;
+            outline: none;
+            border: none;
         }
         .approve-wrapper {
             width: 80%;
@@ -673,7 +691,7 @@ body {
             width: 80%;
             margin: auto;
             color: #fff;
-            font-size: 26px;
+            font-size: 1.3rem;
             padding: 15px 0;
             display: flex;
             justify-content: center;
@@ -685,7 +703,7 @@ body {
     }
     #gallery {
         background-color: #282830;
-        margin-top: 45%;
+        // margin-top: 45%;
         text-align: center;
         padding-top: 3.66rem;
 
@@ -759,6 +777,7 @@ body {
         font-size: 15px;
     }
     #form .lead-wrapper .custom-approve{    font-size: 1.3em;}
+    #info .instructions { margin-top: 13%;}
 }
 
 @media only screen and (min-width: 1250px) and (max-width: 1400px) {
@@ -776,6 +795,7 @@ body {
         // transform: scale(0.7);
         font-size: 13px;
     }
+    #info .instructions { margin-top: 13%;}
     #form .upload-form .preview{ height: 480px; }
     #form .lead-wrapper .checkbox{    width: 30px; height: 30px; margin-left: 2%;}
     #form .lead-wrapper .custom-approve{ font-size: 1.2em; }
@@ -788,6 +808,7 @@ body {
         // transform: scale(0.65);
         font-size: 11px;
     }
+    #info .instructions { margin-top: 13%;}
     #form .upload-form .preview{ height: 400px; }
     #form .lead-wrapper .checkbox{    width: 30px; height: 30px; margin-left: 2%;}
     #form .lead-wrapper .custom-approve{ font-size: 1.2em; }
@@ -801,6 +822,7 @@ body {
         // font-size: 12px;
         font-size: 11px;
     }
+    #info .instructions { margin-top: 13%;}
     #form .upload-form .preview{ height: 300px; }
     #form .lead-wrapper .checkbox{    width: 20px; height: 20px; margin-left: 2%;}
     #form .lead-wrapper .custom-approve{ font-size: 1em; }
@@ -815,7 +837,7 @@ body {
         // transform: scale(0.5);
         font-size: 10px;
     }
-
+    #info .instructions { margin-top: 11%;}
     #form .upload-form .preview{ height: 300px; }
     #form .lead-wrapper .checkbox{    width: 20px; height: 20px; margin-left: 2%;}
     #form .lead-wrapper .custom-approve{ font-size: 1em; }

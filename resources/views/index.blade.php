@@ -43,7 +43,7 @@
             <h2 class="mobile-only">השתתפו בחוויית AR מדהימה ואולי<br>תזכו בלנד קרוזר חלומי לסופ"ש<br>כולל דלק וטיול שטח מודרך</h2>
             <img src="{{ asset('assets/images/mobile-car-logo.png')}}" class="car-logo mobile-only"/>
             <div class="instructions">
-                <p class="mobile-only sub-title">?איך משתתפים</p>
+                <p class="mobile-only sub-title">איך משתתפים?</p>
                 <div class="arrow mobile-only"><img src="{{ asset('assets/images/mobile-arrow.png')}}"/></div>
                 <div class="box">
                     <p class="title desktop-only"><span class="red">שלב 1 :</span>הורידו את האפליקציה</p>
@@ -76,7 +76,7 @@
         <img src="{{ asset('assets/images/two.jpg')}}" class="cover desktop-only">
         <div class="section-content">
             <!-- <div class="car-logo"></div> -->
-            <img class="car-logo" src="{{asset('./assets/images/car-logo.png')}}"/>
+            <img class="car-logo desktop-only" src="{{asset('./assets/images/car-logo.png')}}"/>
             <div class="title">צרו את התמונה הכי<br>מעניינת ויצירתית<br>שלכם מתוך המשחק<br>והעלו לגלריה שלנו </div>
             <!-- <div class="title mobile-only">צרו את התמונה הכי<br>מעניינת ויצירתית<br>שלכם מתוך המשחק</div> -->
 
@@ -120,7 +120,7 @@
         <p class="title mobile-only">גלריית התמונות "לנד קרוזר 5 יבשות"<br> כבר העלתם את התמונה שלכם?</p>
         <img src="{{ asset('assets/images/three.jpg')}}" class="cover desktop-only">
         <div class="section-content">
-            <div class="navigation-wrapper" dir="rtl">
+            <div class="navigation-wrapper">
                 <div id="keen-slider" class="keen-slider"></div>
                 <img src="{{ asset('assets/images/arrow-left.png')}}" id="arrow-left" class="arrow arrow--left">
                 <img src="{{ asset('assets/images/arrow-right.png')}}" id="arrow-right" class="arrow arrow--right">
