@@ -45,7 +45,7 @@ function handleScroll(position) {
     }
 }
 
-window.addEventListener("scroll", (event) => {
+window.addEventListener("scroll", function(event) {
     debounce(handleScroll, this.scrollY, 10);
 });
 
@@ -76,14 +76,15 @@ myDropzone.on("sending", function (file, formData) {
 
 // INIT
 handleScroll(window.scrollY);
+$('#arrow-right').hide();
 $(".input").focus(function () {
     $(this).removeClass("error");
-    $(`#${$(this).attr("id")}_error`).text("");
+    $('#'+$(this).attr("id")+'_error').text("");
 });
 
 $(".checkbox").change(function () {
     $(this).removeClass("error");
-    $(`#${$(this).attr("id")}_error`).text("");
+    $('#'+$(this).attr("id")+'_error').text("");
 });
 
 $(".custom-file-upload").click(function () {
@@ -104,7 +105,7 @@ document.getElementById("file-upload").onchange = function () {
     $.ajax({
         type: "POST",
         enctype: "multipart/form-data",
-        url: `${window.location.href}upload-image`,
+        url: window.location.href+'upload-image',
         data: formData, // serializes the form's elements.
         cache: false,
         contentType: false,
@@ -115,7 +116,7 @@ document.getElementById("file-upload").onchange = function () {
                 $(".thumbnail").remove();
                 $("#img").val(data.path);
                 var elem = $(
-                    `<img class="thumbnail regular-upload" src="${data.path}">`
+                    '<img class="thumbnail regular-upload" src="'+data.path+'">'
                 );
                 elem.appendTo(".preview");
             }
@@ -133,7 +134,7 @@ var fetchedPages = {};
 var total_pages = 0;
 $.ajax({
     type: "POST",
-    url: `${window.location.href}get-images`,
+    url: window.location.href+'get-images',
     data: {
         _token: $('meta[name="csrf-token"]').attr("content"),
         page: page,
@@ -154,7 +155,7 @@ $.ajax({
 function generateSlides(data, per_page) {
     if(per_page === 6){
             data.results.forEach(function (item) {
-                var elem = $( `<div class="keen-slider__slide"><img class="slider-img"src="${item.img}"><div class="user_name">${item.first_name}</div></div>` );
+                var elem = $( '<div class="keen-slider__slide"><img class="slider-img"src="'+item.img+'"><div class="user_name">'+item.first_name+'</div></div>' );
                 $('#keen-slider').slick('slickAdd',elem);
             });
     }else{
@@ -162,9 +163,9 @@ function generateSlides(data, per_page) {
         $.each( data.results, function( key, value ) {
             if(key % 2 == 0){
                 elem += '<div class="keen-slider__slide"><div class="slide-wraper">';
-                elem += `<div><img class="slider-img"src="${value.img}"><div class="user_name">${value.first_name}</div></div>`;
+                elem += '<div><img class="slider-img"src="'+value.img+'"><div class="user_name">'+value.first_name+'</div></div>';
             }else{
-                elem += `<div><img class="slider-img"src="${value.img}"><div class="user_name">${value.first_name}</div></div>`;
+                elem += '<div><img class="slider-img"src="'+value.img+'"><div class="user_name">'+value.first_name+'</div></div>';
                 elem += '</div></div>';
             }
         });
@@ -179,9 +180,8 @@ function checkImageURL(imgurl) {
 
 var slider;
 var realSlide;
+var slidesToShow = screen.width < 768 ? 2 : 3;
 function createSlider() {
-    // var slidesNumber = screen.width < 768 ? 2 : 3;
-
     // SLIDER
     $('#keen-slider').slick({
         rtl: true,
@@ -189,14 +189,30 @@ function createSlider() {
         infinite: false,
         prevArrow: $('#arrow-right'),
         nextArrow: $('#arrow-left'),
-        slidesToShow: 1,
+        slidesToShow: slidesToShow,
         slidesToScroll: 1,
       });
 
      // On before slide change
     $('#keen-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        if(nextSlide == (slick.slideCount-1)){
+        
+        if(nextSlide + slidesToShow == slick.slideCount ){
+        // if(nextSlide == (slick.slideCount-1)){
             getImageFromServer();
+        }
+    });
+
+    $('#keen-slider').on('afterChange', function(event, slick, currentSlide){
+        if(currentSlide === 0){
+            $('#arrow-right').hide();
+        }else{
+            $('#arrow-right').show();
+        }
+
+        if(currentSlide + slidesToShow == slick.slideCount ){
+            $('#arrow-left').hide();
+        }else{
+            $('#arrow-left').show();
         }
     });
 
@@ -209,11 +225,12 @@ function createSlider() {
             return false;
         }
 
-        var data = `page=${go_to_page}&per_page=${per_page}`;
-        data = `${data}&_token=${$('meta[name="csrf-token"]').attr( "content" )}`;
+        var data = 'page='+go_to_page+'&per_page='+per_page;
+        // data = `${data}&_token=${$(\'meta[name="csrf-token"]').attr( "content" )}`;
+        data = data+'&_token='+$('meta[name="csrf-token"]').attr( "content" );
         $.ajax({
             type: "POST",
-            url: `${window.location.href}get-images`,
+            url: window.location.href+'get-images',
             data: data,
             success: function (data, status, xhr) {
                 if(!data.error && (data.results && data.results.length > 0)){
@@ -233,10 +250,11 @@ $("#lead-form .submit").click(function (e) {
         return false;
     }
     var data = $("#lead-form").serialize();
-    data = `${data}&_token=${$('meta[name="csrf-token"]').attr("content")}`;
+    // data = `${data}&_token=${$('meta[name="csrf-token"]').attr("content")}`;
+    data = data+'&_token='+$('meta[name="csrf-token"]').attr( "content" );
     $.ajax({
         type: "POST",
-        url: `${window.location.href}create-lead`,
+        url: window.location.href+'create-lead',
         data: data,
         success: function (data, status, xhr) {
             if (data.error) {
@@ -310,12 +328,12 @@ function handleFormErrors(errors) {
     $.each(errors, function (key, valueObj) {
         switch (valueObj[0]) {
             case "invalid":
-                $(`#${key}`).addClass("error");
-                $(`#${key}_error`).text(`${fields_names[key]} לא תקין`);
+                $("#"+key).addClass("error");
+                $("#"+key+'_error').text(fields_names[key]+' לא תקין');
                 break;
             case "required":
-                $(`#${key}`).addClass("error");
-                $(`#${key}_error`).text(`${fields_names[key]} שדה חובה`);
+                $("#"+key).addClass("error");
+                $("#"+key+'_error').text(fields_names[key]+' שדה חובה');
                 break;
             default:
                 break;

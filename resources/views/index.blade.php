@@ -7,7 +7,6 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@5.3.4/keen-slider.min.css" /> -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -15,7 +14,7 @@
     <link href="{{ asset('basic.css') }}" rel="stylesheet">
     <link href="{{ asset('dropzone.css') }}" rel="stylesheet">
     <link href="{{ asset('style.css') }}" rel="stylesheet">
-    <title>Document</title>
+    <title>TOYOTA</title>
 </head>
 
 <body>
@@ -38,10 +37,10 @@
         <img src="{{ asset('assets/images/first-short.png')}}" class="cover desktop-only">
         <div class="section-content">
 
-            <h1 class="desktop-only">חולמים על לנד קרוזר</br>חדש? <span class="red">קבלו אותו</br>ישר לסלון שלכם!</span></h1>
-            <h1 class="mobile-only">חולמים על</br>לנד קרוזר חדש?</br><span class="red">קבלו אותו ישר</br>לסלון שלכם!</span></h1>
-            <h2 class="desktop-only">השתתפו במשחק ואולי תזכו</br>בלנד קרוזר חלומי לסופ"ש כולל</br>דלק וטיול שטח מודרך</h2>
-            <h2 class="mobile-only">השתתפו בחוויית AR מדהימה ואולי</br>תזכו בלנד קרוזר חלומי לסופ"ש</br>כולל דלק וטיול שטח מודרך</h2>
+            <h1 class="desktop-only">חולמים על לנד קרוזר<br>חדש? <span class="red">קבלו אותו<br>ישר לסלון שלכם!</span></h1>
+            <h1 class="mobile-only">חולמים על<br>לנד קרוזר חדש?<br><span class="red">קבלו אותו ישר<br>לסלון שלכם!</span></h1>
+            <h2 class="desktop-only">השתתפו במשחק ואולי תזכו<br>בלנד קרוזר חלומי לסופ"ש כולל<br>דלק וטיול שטח מודרך</h2>
+            <h2 class="mobile-only">השתתפו בחוויית AR מדהימה ואולי<br>תזכו בלנד קרוזר חלומי לסופ"ש<br>כולל דלק וטיול שטח מודרך</h2>
             <img src="{{ asset('assets/images/mobile-car-logo.png')}}" class="car-logo mobile-only"/>
             <div class="instructions">
                 <p class="mobile-only sub-title">?איך משתתפים</p>
@@ -49,8 +48,8 @@
                 <div class="box">
                     <p class="title desktop-only"><span class="red">שלב 1 :</span>הורידו את האפליקציה</p>
                     <p class="title mobile-only">שלב 1 :הורידו את האפליקציה</p>
-                    <div class="content desktop-only">"לנד קרוזר 5 יבשות", אפליקציית משחק</br>ה- AR (מציאות רבודה) של טויוטה</div>
-                    <div class="content mobile-only">"לנד קרוזר 5 יבשות", אפליקציית ה- AR</br>(מציאות רבודה) של טויוטה</div>
+                    <div class="content desktop-only">"לנד קרוזר 5 יבשות", אפליקציית משחק<br>ה- AR (מציאות רבודה) של טויוטה</div>
+                    <div class="content mobile-only">"לנד קרוזר 5 יבשות", אפליקציית ה- AR<br>(מציאות רבודה) של טויוטה</div>
                     <div class="link-wrapper">
                         <a href="#iphone" class="link"> <img src="{{ asset('assets/images/ios.jpg')}}"/></a>
                         <a href="#android" class="link"> <img src="{{ asset('assets/images/android.jpg')}}"/></a>
@@ -60,15 +59,15 @@
                 <div class="arrow mobile-only"><img src="{{ asset('assets/images/mobile-arrow.png')}}"/></div>
                 <div class="box">
                     <p class="title"><span class="red">שלב 2 :</span>שחקו וצלמו</p>
-                    <div class="content desktop-only">קחו את הלנד קרוזר לנסיעה בלתי</br>נשכחת וצלמו תמונה יצירתית</br>שמשלבת את המציאות הרבודה</br>עם המציאות האמיתית</div>
-                    <div class="content mobile-only">קחו את הלנד קרוזר לנסיעה בלתי נשכחת</br>וצלמו תמונה יצירתית שמשלבת את המציאות</br>הרבודה עם המציאות האמיתית</div>
+                    <div class="content desktop-only">קחו את הלנד קרוזר לנסיעה בלתי<br>נשכחת וצלמו תמונה יצירתית<br>שמשלבת את המציאות הרבודה<br>עם המציאות האמיתית</div>
+                    <div class="content mobile-only">קחו את הלנד קרוזר לנסיעה בלתי נשכחת<br>וצלמו תמונה יצירתית שמשלבת את המציאות<br>הרבודה עם המציאות האמיתית</div>
                 </div>
                 <div class="arrow desktop-only"><img src="{{ asset('assets/images/arrow-left.png')}}" /></div>
                 <div class="arrow mobile-only"><img src="{{ asset('assets/images/mobile-arrow.png')}}"/></div>
                 <div class="box">
                     <p class="title"><span class="red">שלב 3 :</span>העלו תמונה</p>
-                    <div class="content desktop-only">העלו את התמונה לאתר ואולי</br>תזכו בלנד קרוזר לסופ"ש</br>כולל דלק וטיול שטח מודרך</div>
-                    <div class="content mobile-only">העלו את התמונה לאתר ואולי תזכו בלנד קרוזר</br>לסופ"ש כולל דלק וטיול שטח מודרך</div>
+                    <div class="content desktop-only">העלו את התמונה לאתר ואולי<br>תזכו בלנד קרוזר לסופ"ש<br>כולל דלק וטיול שטח מודרך</div>
+                    <div class="content mobile-only">העלו את התמונה לאתר ואולי תזכו בלנד קרוזר<br>לסופ"ש כולל דלק וטיול שטח מודרך</div>
                 </div>
             </div>
         </div>
@@ -76,9 +75,10 @@
     <div class="section" id="form">
         <img src="{{ asset('assets/images/two.jpg')}}" class="cover desktop-only">
         <div class="section-content">
-            <div class="car-logo"></div>
-            <div class="title">צרו את התמונה הכי</br>מעניינת ויצירתית</br>שלכם מתוך המשחק</br>והעלו לגלריה שלנו </div>
-            <!-- <div class="title mobile-only">צרו את התמונה הכי</br>מעניינת ויצירתית</br>שלכם מתוך המשחק</div> -->
+            <!-- <div class="car-logo"></div> -->
+            <img class="car-logo" src="{{asset('./assets/images/car-logo.png')}}"/>
+            <div class="title">צרו את התמונה הכי<br>מעניינת ויצירתית<br>שלכם מתוך המשחק<br>והעלו לגלריה שלנו </div>
+            <!-- <div class="title mobile-only">צרו את התמונה הכי<br>מעניינת ויצירתית<br>שלכם מתוך המשחק</div> -->
 
             <form id="upload" class="upload-form" enctype="multipart/form-data" method="post">
                 @csrf
@@ -90,8 +90,8 @@
             </form>
 
             <div class="lead-wrapper">
-                <p class="form-text desktop-only">עכשיו נשאר רק למלא את</br>הפרטים כדי שנוכל לחזור</br>אליכם במקרה וזכיתם:</p>
-                <p class="form-text mobile-only">עכשיו נשאר רק למלא את</br>הפרטים כדי שנוכל לחזור אליכם</br>במקרה וזכיתם</p>
+                <p class="form-text desktop-only">עכשיו נשאר רק למלא את<br>הפרטים כדי שנוכל לחזור<br>אליכם במקרה וזכיתם:</p>
+                <p class="form-text mobile-only">עכשיו נשאר רק למלא את<br>הפרטים כדי שנוכל לחזור אליכם<br>במקרה וזכיתם</p>
                 <form id="lead-form" class="lead-form" action="<?=route('createLead');?>" autocomplete="off">
                     <input type="text" class="input" name="first_name" id="first_name" placeholder="שם פרטי">
                     <p class="error_message" id="first_name_error"></p>
@@ -105,7 +105,7 @@
                     <input type="hidden" name="img" id="img">
                     <div class="approve-wrapper">
                         <input type="checkbox" class="checkbox" id="approve" name="approve">
-                        <label for="approve" class="custom-approve">אני מאשר/ת את תקנון הפעילות.</br>התחרות תסתיים ב-
+                        <label for="approve" class="custom-approve">אני מאשר/ת את תקנון הפעילות.<br>התחרות תסתיים ב-
                         28/2/21</label>
                     </div>
                     <p class="error_message" id="approve_error"></p>
@@ -117,7 +117,7 @@
         </div>
     </div>
     <div class="section" id="gallery">
-        <p class="title mobile-only">גלריית התמונות "לנד קרוזר 5 יבשות"</br> כבר העלתם את התמונה שלכם?</p>
+        <p class="title mobile-only">גלריית התמונות "לנד קרוזר 5 יבשות"<br> כבר העלתם את התמונה שלכם?</p>
         <img src="{{ asset('assets/images/three.jpg')}}" class="cover desktop-only">
         <div class="section-content">
             <div class="navigation-wrapper" dir="rtl">
@@ -130,8 +130,8 @@
     <div class="blue-bar"></div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/keen-slider@5.3.4/keen-slider.min.js"></script> -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js"></script>
     <script src="{{ asset('dropzone.js') }}"></script>
     <script src="{{ asset('srcipt.js') }}"></script>
     <!-- <form action="<?=route('uploadImage');?>" method="post" enctype="multipart/form-data">
