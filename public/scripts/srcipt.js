@@ -83,6 +83,7 @@ var myDropzone = new Dropzone("#upload", {
     previewTemplate:
         '<div class="dz-preview dz-file-preview"> <img class="thumbnail" data-dz-thumbnail /> <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div> </div>',
     success: function (file, res) {
+        $(".upload-img").hide();
         $("#img").val(res.path);
         $(".regular-upload").remove();
     },
@@ -112,6 +113,7 @@ document.getElementById("file-upload").onchange = function () {
                 var elem = $(
                     '<img class="thumbnail regular-upload" src="'+data.path+'">'
                 );
+                $(".upload-img").hide();
                 elem.appendTo(".preview");
             }
         },

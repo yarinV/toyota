@@ -10,10 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link href="{{ asset('normalize.css') }}" rel="stylesheet">
-    <link href="{{ asset('basic.css') }}" rel="stylesheet">
-    <link href="{{ asset('dropzone.css') }}" rel="stylesheet">
-    <link href="{{ asset('style.css') }}" rel="stylesheet">
+    <link href="{{ asset('styles/normalize.css') }}" rel="stylesheet">
+    <link href="{{ asset('styles/basic.css') }}" rel="stylesheet">
+    <link href="{{ asset('styles/dropzone.css') }}" rel="stylesheet">
+    <link href="{{ asset('styles/style.css') }}" rel="stylesheet">
     <title>TOYOTA</title>
 </head>
 
@@ -132,8 +132,8 @@
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js"></script>
-    <script src="{{ asset('dropzone.js') }}"></script>
-    <script src="{{ asset('srcipt.js') }}"></script>
+    <script src="{{ asset('scripts/dropzone.js') }}"></script>
+    <script src="{{ asset('scripts/srcipt.js') }}"></script>
     <!-- <form action="<?=route('uploadImage');?>" method="post" enctype="multipart/form-data">
         @csrf
         <input type="file" name="file" id="file" accept="image/*" />
