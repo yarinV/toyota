@@ -122,9 +122,9 @@
         <div class="section-content">
             <div class="navigation-wrapper">
                 <div id="keen-slider" class="keen-slider"></div>
-                <img src="{{ asset('assets/images/arrow-left.png')}}" id="arrow-left" class="arrow arrow--left">
-                <img src="{{ asset('assets/images/arrow-right.png')}}" id="arrow-right" class="arrow arrow--right">
             </div>
+            <img src="{{ asset('assets/images/arrow-left.png')}}" id="arrow-left" class="arrow arrow--left">
+            <img src="{{ asset('assets/images/arrow-right.png')}}" id="arrow-right" class="arrow arrow--right">
         </div>
     </div>
     <div class="blue-bar"></div>

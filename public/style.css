@@ -378,6 +378,8 @@ body {
   }
   #gallery .navigation-wrapper {
     position: relative;
+    width: 80%;
+    margin: auto;
   }
   #gallery .dots {
     display: flex;
