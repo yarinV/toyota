@@ -77,7 +77,7 @@ function debounce(method, props, delay) {
 
 // DRAG AND DROP
 var myDropzone = new Dropzone("#upload", {
-    url: "http://localhost/toyota/public/upload-image",
+    url: window.location.href+'upload-image',
     thumbnailWidth: null,
     thumbnailHeight: null,
     previewTemplate:
@@ -370,6 +370,9 @@ function toggleMobileMenu(state) {
 }
 
 // INIT
+// $('#upload').height($('.lead-wrapper').height());
+$('.lead-wrapper').height($('#upload').height());
+
 handleScroll(window.scrollY);
 $('#arrow-left').hide();
 $(".input").focus(function () {

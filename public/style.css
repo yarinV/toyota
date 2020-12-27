@@ -1,5 +1,5 @@
 html {
-  font-size: 15px;
+  font-size: 15px !important;
 }
 
 body {
@@ -136,17 +136,17 @@ body {
   #info .instructions .box .title {
     font-size: 1.9rem;
     font-weight: bold;
-    margin-bottom: 1.3em;
+    margin-bottom: 1.3rem;
   }
   #info .instructions .box .content {
     font-size: 1.6rem;
   }
   #info .instructions .box .link-wrapper {
-    margin-top: 2em;
+    margin-top: 2rem;
     display: flex;
   }
   #info .instructions .box .link-wrapper .link {
-    padding-left: 0.2em;
+    padding-left: 0.2rem;
   }
   #info .instructions .box .link-wrapper .link img {
     display: block;
@@ -155,16 +155,16 @@ body {
   #info .instructions .arrow {
     flex: 1;
     text-align: left;
-    margin-top: 3em;
+    margin-top: 3rem;
   }
   #info .instructions .arrow img {
     width: 20%;
-    margin-left: 4em;
+    margin-left: 4rem;
   }
 
   #form {
-    padding-top: 10em;
-    padding-bottom: 3em;
+    padding-top: 10rem;
+    padding-bottom: 3rem;
   }
   #form .car-logo {
     display: inline-block;
@@ -174,14 +174,14 @@ body {
   }
   #form .title {
     display: inline-block;
-    font-size: 1.9em;
+    font-size: 1.9rem;
     vertical-align: top;
     margin-left: 6%;
     padding-top: 1%;
   }
   #form .error_message {
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
   #form .success_overlay {
     position: absolute;
@@ -203,9 +203,6 @@ body {
   #form .success_overlay.show {
     display: flex;
   }
-  #form form#lead-form {
-    position: relative;
-  }
   #form .upload-form {
     display: inline-block;
     margin-left: 4%;
@@ -215,7 +212,7 @@ body {
   #form .upload-form .preview {
     position: relative;
     width: 100%;
-    height: 431px;
+    height: 450px;
     background-color: #fff;
     display: flex;
     align-items: center;
@@ -256,7 +253,7 @@ body {
     border: 1px solid #fff;
     display: block;
     margin-top: 26px;
-    font-size: 2em;
+    font-size: 2rem;
     text-align: center;
     padding: 0.6em 0;
     box-sizing: border-box;
@@ -275,16 +272,17 @@ body {
     display: inline-block;
     vertical-align: top;
     width: 22%;
+    position: relative;
   }
   #form .lead-wrapper .form-text {
-    font-size: 1.4em;
-    margin-bottom: 30px;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
   }
   #form .lead-wrapper .input {
     width: 100%;
     padding: 0.45em 5px;
     margin: 0.5em 0;
-    font-size: 1.8em;
+    font-size: 1.8rem;
     display: block;
     outline: none !important;
     box-sizing: border-box;
@@ -308,7 +306,7 @@ body {
   #form .lead-wrapper .custom-approve {
     display: inline-block;
     vertical-align: top;
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
   #form .lead-wrapper .submit {
     display: block;
@@ -317,10 +315,12 @@ body {
     border: none;
     display: block;
     margin-top: 26px;
-    font-size: 2em;
+    font-size: 2rem;
     text-align: center;
     padding: 0.6em 0;
     background: #ff0022;
+    position: absolute;
+    bottom: 0;
   }
 
   #gallery {
@@ -521,7 +521,7 @@ body {
   }
 
   #info {
-    margin-top: 0.5em;
+    margin-top: 0.5rem;
     text-align: center;
   }
   #info h1 {
@@ -582,11 +582,11 @@ body {
   }
   #form .error_message {
     color: #000;
-    font-size: 1.1em;
+    font-size: 1.1rem;
     text-align: right;
     width: 80%;
     margin: auto;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.3rem;
   }
   #form .error_message#approve_error {
     margin-top: 0.3em !important;
@@ -709,7 +709,7 @@ body {
   #gallery .navigation-wrapper {
     width: 80%;
     margin: auto;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.3rem;
     position: relative;
   }
   #gallery .navigation-wrapper .keen-slider__slide {
@@ -757,11 +757,11 @@ body {
 }
 @media only screen and (min-width: 1400px) and (max-width: 1600px) {
   html {
-    font-size: 14px;
+    font-size: 14px !important;
   }
 
   #form .lead-wrapper .custom-approve {
-    font-size: 1.3em;
+    font-size: 1.3rem;
   }
 
   #info .instructions {
@@ -774,11 +774,11 @@ body {
 }
 @media only screen and (min-width: 1250px) and (max-width: 1400px) {
   html {
-    font-size: 13px;
+    font-size: 13px !important;
   }
 
   #form .lead-wrapper .custom-approve {
-    font-size: 1.25em;
+    font-size: 1.25rem;
   }
 
   #form .upload-form .preview {
@@ -786,12 +786,12 @@ body {
   }
 
   #form .lead-wrapper .form-text {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1250px) {
   html {
-    font-size: 13px;
+    font-size: 13px !important;
   }
 
   #info .instructions {
@@ -809,11 +809,11 @@ body {
   }
 
   #form .lead-wrapper .custom-approve {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
 
   #form .title {
-    font-size: 1.7em;
+    font-size: 1.7rem;
   }
 
   #form .lead-wrapper .input {
@@ -821,17 +821,17 @@ body {
   }
 
   #form .title {
-    font-size: 1.7em;
-    font-size: 1.7em;
+    font-size: 1.7rem;
+    font-size: 1.7rem;
   }
 
   #form .lead-wrapper .form-text {
-    font-size: 1em;
+    font-size: 1rem;
   }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1100px) {
   html {
-    font-size: 11px;
+    font-size: 11px !important;
   }
 
   #info .instructions {
@@ -849,26 +849,26 @@ body {
   }
 
   #form .lead-wrapper .custom-approve {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
 
   #form .title {
-    font-size: 1.7em;
-    font-size: 1.7em;
+    font-size: 1.7rem;
+    font-size: 1.7rem;
   }
 
   #form .lead-wrapper .form-text {
-    font-size: 1em;
+    font-size: 1rem;
   }
 
   #form .title {
-    font-size: 1.7em;
-    font-size: 1.7em;
+    font-size: 1.7rem;
+    font-size: 1.7rem;
   }
 }
 @media only screen and (min-width: 800px) and (max-width: 1000px) {
   html {
-    font-size: 11px;
+    font-size: 11px !important;
   }
 
   #info .instructions {
@@ -886,33 +886,33 @@ body {
   }
 
   #form .lead-wrapper .custom-approve {
-    font-size: 1em;
+    font-size: 1rem;
   }
 
   #form .title {
-    font-size: 1.7em;
+    font-size: 1.7rem;
   }
 
   #form .lead-wrapper .input {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   #form .lead-wrapper .form-text {
-    font-size: 1em;
+    font-size: 1rem;
   }
 
   #form .title {
-    font-size: 1.7em;
-    font-size: 1.7em;
+    font-size: 1.7rem;
+    font-size: 1.7rem;
   }
 
   #form {
-    padding-bottom: 0em;
+    padding-bottom: 0rem;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 800px) {
   html {
-    font-size: 10px;
+    font-size: 10px !important;
   }
 
   #info .instructions {
@@ -930,64 +930,63 @@ body {
   }
 
   #form .lead-wrapper .custom-approve {
-    font-size: 1em;
+    font-size: 1rem;
   }
 
   #form .title {
-    font-size: 1.7em;
+    font-size: 1.7rem;
   }
 
   #form .lead-wrapper .input {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 
   #form .lead-wrapper .form-text {
-    font-size: 1em;
+    font-size: 1rem;
   }
 
   #form .title {
-    font-size: 1.7em;
-    font-size: 1.7em;
+    font-size: 1.7rem;
+    font-size: 1.7rem;
   }
 }
 @media only screen and (min-width: 700px) and (max-width: 768px) {
   html {
-    font-size: 35px;
+    font-size: 35px !important;
   }
 }
 @media only screen and (min-width: 650px) and (max-width: 700px) {
   html {
-    font-size: 33px;
+    font-size: 33px !important;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 650px) {
   html {
-    font-size: 30px;
+    font-size: 30px !important;
   }
 }
 @media only screen and (min-width: 540px) and (max-width: 600px) {
   html {
-    font-size: 26px;
+    font-size: 26px !important;
   }
 }
 @media only screen and (min-width: 450px) and (max-width: 540px) {
   html {
-    font-size: 22px;
+    font-size: 22px !important;
   }
 }
 @media only screen and (min-width: 400px) and (max-width: 450px) {
   html {
-    font-size: 18px;
+    font-size: 18px !important;
   }
 }
 @media only screen and (min-width: 350px) and (max-width: 400px) {
   html {
-    font-size: 17px;
+    font-size: 17px !important;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 350px) {
   html {
-    zoom: 0.85;
-    font-size: 12px;
+    font-size: 12px !important;
   }
 }

@@ -79,7 +79,7 @@
             <img class="car-logo desktop-only" src="{{asset('./assets/images/car-logo.png')}}"/>
             <div class="title">צרו את התמונה הכי<br>מעניינת ויצירתית<br>שלכם מתוך המשחק<br>והעלו לגלריה שלנו </div>
             <!-- <div class="title mobile-only">צרו את התמונה הכי<br>מעניינת ויצירתית<br>שלכם מתוך המשחק</div> -->
-
+            
             <form id="upload" class="upload-form" enctype="multipart/form-data" method="post">
                 @csrf
                 <div class="preview desktop-only"><img class="upload-img" src="{{asset('./assets/images/upload.png')}}"/></div>
