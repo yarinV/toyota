@@ -285,7 +285,7 @@ function createSlider() {
                     fetchedPages[go_to_page] = true;
                     page = go_to_page;
                     generateSlides(data, per_page);
-                    // $(".slick-slide").css("height", stHeight + "px");
+                    $(".slick-slide").css("height",  $(".slick-track").height() + "px");
                     checkImageURL();
                 }
             },
