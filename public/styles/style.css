@@ -393,27 +393,6 @@ body {
     width: 80%;
     margin: auto;
   }
-  #gallery .dots {
-    display: flex;
-    padding: 10px 0;
-    justify-content: center;
-  }
-  #gallery .dot {
-    border: none;
-    width: 10px;
-    height: 10px;
-    background: #c5c5c5;
-    border-radius: 50%;
-    margin: 0 5px;
-    padding: 5px;
-    cursor: pointer;
-  }
-  #gallery .dot:focus {
-    outline: none;
-  }
-  #gallery .dot--active {
-    background: #000;
-  }
   #gallery .arrow {
     position: absolute;
     top: 50%;
@@ -718,9 +697,6 @@ body {
     text-align: center;
     padding-top: 3.66rem;
     position: relative;
-  }
-  #gallery .slick-track {
-    min-height: 550px;
   }
   #gallery .slide-wraper {
     width: 100%;
