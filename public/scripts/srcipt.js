@@ -80,9 +80,18 @@ var myDropzone = new Dropzone("#upload", {
     url: window.location.href+'upload-image',
     thumbnailWidth: null,
     thumbnailHeight: null,
+    maxFiles:1,
+    init: function() {
+        this.on("addedfile", function() {
+            if (this.files[1]!=null){
+            this.removeFile(this.files[0]);
+            }
+        });
+    },
     previewTemplate:
         '<div class="dz-preview dz-file-preview"> <img class="thumbnail" data-dz-thumbnail /> <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div> </div>',
     success: function (file, res) {
+        $('.preview').append($('.dz-preview'));
         $(".upload-img").hide();
         $("#img").val(res.path);
         $(".regular-upload").remove();
@@ -270,6 +279,8 @@ $("#lead-form .submit").click(function (e) {
                 // success lead form
                 $('.success_overlay').addClass('show');
                 $("#success").show();
+                $(".dz-preview").hide();
+                $("#regular-upload").hide();
             }
         },
     });
