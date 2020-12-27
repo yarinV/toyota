@@ -45,22 +45,24 @@ function handleScroll(position) {
         document.body.querySelector("header").classList.add("black");
     }
     var scrollPos = $(document).scrollTop();
-    $('.menu-item').each(function () {
+    $(".menu-item").each(function () {
         var currLink = $(this);
-        var refElement = $('#'+currLink.attr("data-element"));
-        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-            $('.menu-item').removeClass("active");
+        var refElement = $("#" + currLink.attr("data-element"));
+        if (
+            refElement.position().top <= scrollPos &&
+            refElement.position().top + refElement.height() > scrollPos
+        ) {
+            $(".menu-item").removeClass("active");
             currLink.addClass("active");
-        }
-        else{
+        } else {
             currLink.removeClass("active");
         }
     });
 }
 
-window.addEventListener("scroll", function(event) {
+window.addEventListener("scroll", function (event) {
     var position = this.scrollY;
-    if(!position){
+    if (!position) {
         position = document.documentElement.scrollTop;
     }
     debounce(handleScroll, position, 10);
@@ -75,23 +77,41 @@ function debounce(method, props, delay) {
     }, delay);
 }
 
+function validate(el) {
+    var maxfilesize = (1024 * 1024) * 2, // 2Mb
+        filesize = el.files[0].size,
+        errorMessageElem = document.getElementById("img_error");
+
+    if (filesize > maxfilesize) {
+        errorMessageElem.innerHTML = "קובץ גדול מידי: " + Math.round((filesize / (1024 * 1024))) + "Mb. גודל מקסימלי: 2Mb";
+        return false;
+    } else {
+        errorMessageElem.innerHTML = "";
+        return true;
+    }
+}
+
 // DRAG AND DROP
 var myDropzone = new Dropzone("#upload", {
-    url: window.location.href+'upload-image',
+    url: window.location.href + "upload-image",
     thumbnailWidth: null,
     thumbnailHeight: null,
-    maxFiles:1,
-    init: function() {
-        this.on("addedfile", function() {
-            if (this.files[1]!=null){
-            this.removeFile(this.files[0]);
+    maxFiles: 1,
+    maxFilesize: 2,
+    init: function () {
+        this.on("addedfile", function () {
+            if (this.files[1] != null) {
+                this.removeFile(this.files[0]);
             }
         });
+    },
+    maxfilesexceeded: function(){
+        validate($('#file-upload'))
     },
     previewTemplate:
         '<div class="dz-preview dz-file-preview"> <img class="thumbnail" data-dz-thumbnail /> <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div> </div>',
     success: function (file, res) {
-        $('.preview').append($('.dz-preview'));
+        $(".preview").append($(".dz-preview"));
         $(".upload-img").hide();
         $("#img").val(res.path);
         $(".regular-upload").remove();
@@ -103,26 +123,38 @@ myDropzone.on("sending", function (file, formData) {
 
 // image upload
 document.getElementById("file-upload").onchange = function () {
+    if(!validate(this)){
+        return;
+    }
     var formData = new FormData();
     formData.append("_token", $('meta[name="csrf-token"]').attr("content"));
     formData.append("file", $("#file-upload")[0].files[0]);
     $.ajax({
         type: "POST",
         enctype: "multipart/form-data",
-        url: window.location.href+'upload-image',
+        url: window.location.href + "upload-image",
         data: formData, // serializes the form's elements.
         cache: false,
         contentType: false,
         processData: false,
         timeout: 600000,
         success: function (data) {
+            // open popup on mobile
             if (data.path) {
-                $(".thumbnail").remove();
-                $("#img").val(data.path);
+                $("#img").val(data.path); 
+                // mobile
+                if(screen.width < 768){
+                    $('.popup').show();
+                }else{
+                // desktop
+                    $(".thumbnail").remove();
+                    $(".upload-img").hide();
+                }
                 var elem = $(
-                    '<img class="thumbnail regular-upload" src="'+data.path+'">'
+                    '<img class="thumbnail regular-upload" src="' +
+                        data.path +
+                        '">'
                 );
-                $(".upload-img").hide();
                 elem.appendTo(".preview");
             }
         },
@@ -132,6 +164,15 @@ document.getElementById("file-upload").onchange = function () {
     });
 };
 
+$('.close-preview').click(function(){
+    $("#img").val('');
+    $('.popup').hide();
+});
+
+$('.submit-button').click(function(){
+    $('.popup').hide();
+});
+
 // get images build gallery
 var page = 1;
 var per_page = 8;
@@ -139,14 +180,14 @@ var fetchedPages = {};
 var total_pages = 0;
 $.ajax({
     type: "POST",
-    url: window.location.href+'get-images',
+    url: window.location.href + "get-images",
     data: {
         _token: $('meta[name="csrf-token"]').attr("content"),
         page: page,
         per_page: per_page,
     },
     success: function (data, status, xhr) {
-        if(!data.error && (data.results && data.results.length > 0)){
+        if (!data.error && data.results && data.results.length > 0) {
             total_pages = data.total_pages;
             fetchedPages[page] = true;
             page = page;
@@ -158,26 +199,18 @@ $.ajax({
 });
 
 function generateSlides(data, per_page) {
-   
-    // if( screen.width > 768){
-            data.results.forEach(function (item) {
-                var elem = $( '<div class="keen-slider__slide"><img class="slider-img"src="'+item.img+'"><div class="user_name">'+item.first_name+'</div></div>' );
-                $('#keen-slider').slick('slickAdd',elem);
-            });
-    // }else{
-    //     var elem = '';
-    //     $.each( data.results, function( key, value ) {
-    //         if(key % 2 == 0){
-    //             elem += '<div class="keen-slider__slide"><div class="slide-wraper">';
-    //             elem += '<div><img class="slider-img"src="'+value.img+'"><div class="user_name">'+value.first_name+'</div></div>';
-    //         }else{
-    //             elem += '<div><img class="slider-img"src="'+value.img+'"><div class="user_name">'+value.first_name+'</div></div>';
-    //             elem += '</div></div>';
-    //         }
-    //     });
-    //     $('#keen-slider').slick('slickAdd',elem);
-    // }
+    data.results.forEach(function (item) {
+        var elem = $(
+            '<div class="keen-slider__slide"><img class="slider-img"src="' +
+                item.img +
+                '"><div class="user_name">' +
+                item.first_name +
+                "</div></div>"
+        );
+        $("#keen-slider").slick("slickAdd", elem);
+    });
 }
+
 function checkImageURL(imgurl) {
     $("#keen-slider img").on("error", function (e) {
         $(this).remove();
@@ -189,70 +222,71 @@ var realSlide;
 var slidesToShow = screen.width < 768 ? 2 : 4;
 var stHeight = 0;
 function createSlider() {
-
-    $('#keen-slider').on('init', function(slick){
-        setTimeout(function(){
-            stHeight = $('.slick-track').height();
-            $('.slick-slide').css('height',stHeight + 'px' );
-        },100)
+    $("#keen-slider").on("init", function (slick) {
+        setTimeout(function () {
+            stHeight = $(".slick-track").height();
+            $(".slick-slide").css("height", stHeight + "px");
+        }, 100);
     });
 
     // SLIDER
-    $('#keen-slider').slick({
+    $("#keen-slider").slick({
         // rtl: true,
         arrows: true,
         infinite: false,
-        prevArrow: $('#arrow-left'),
-        nextArrow: $('#arrow-right'),
+        prevArrow: $("#arrow-left"),
+        nextArrow: $("#arrow-right"),
         slidesToShow: slidesToShow,
         slidesToScroll: 1,
-        mobileFirst:true
-      });
+        mobileFirst: true,
+    });
 
-    $('#keen-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        
-        if(nextSlide + slidesToShow == slick.slideCount ){
-        // if(nextSlide == (slick.slideCount-1)){
-            getImageFromServer();
+    $("#keen-slider").on(
+        "beforeChange",
+        function (event, slick, currentSlide, nextSlide) {
+            if (nextSlide + slidesToShow == slick.slideCount) {
+                // if(nextSlide == (slick.slideCount-1)){
+                getImageFromServer();
+            }
+        }
+    );
+
+    $("#keen-slider").on("afterChange", function (event, slick, currentSlide) {
+        if (currentSlide === 0) {
+            $("#arrow-left").hide();
+        } else {
+            $("#arrow-left").show();
+        }
+
+        if (currentSlide + slidesToShow == slick.slideCount) {
+            $("#arrow-right").hide();
+        } else {
+            $("#arrow-right").show();
         }
     });
 
-    $('#keen-slider').on('afterChange', function(event, slick, currentSlide){
-        if(currentSlide === 0){
-            $('#arrow-left').hide();
-        }else{
-            $('#arrow-left').show();
-        }
-
-        if(currentSlide + slidesToShow == slick.slideCount ){
-            $('#arrow-right').hide();
-        }else{
-            $('#arrow-right').show();
-        }
-    });
-
-    function getImageFromServer(){
+    function getImageFromServer() {
         var per_page = 8;
         var go_to_page = ++page;
-        
-        if(fetchedPages[go_to_page] || go_to_page > total_pages){
+
+        if (fetchedPages[go_to_page] || go_to_page > total_pages) {
             // already fetched this page
             return false;
         }
 
-        var data = 'page='+go_to_page+'&per_page='+per_page;
+        var data = "page=" + go_to_page + "&per_page=" + per_page;
         // data = `${data}&_token=${$(\'meta[name="csrf-token"]').attr( "content" )}`;
-        data = data+'&_token='+$('meta[name="csrf-token"]').attr( "content" );
+        data = data + "&_token=" + $('meta[name="csrf-token"]').attr("content");
         $.ajax({
             type: "POST",
-            url: window.location.href+'get-images',
+            url: window.location.href + "get-images",
             data: data,
             success: function (data, status, xhr) {
-                if(!data.error && (data.results && data.results.length > 0)){
+                if (!data.error && data.results && data.results.length > 0) {
                     fetchedPages[go_to_page] = true;
                     page = go_to_page;
                     generateSlides(data, per_page);
-                    $('.slick-slide').css('height',stHeight + 'px' );
+                    $(".slick-slide").css("height", stHeight + "px");
                     checkImageURL();
                 }
             },
@@ -267,17 +301,17 @@ $("#lead-form .submit").click(function (e) {
     }
     var data = $("#lead-form").serialize();
     // data = `${data}&_token=${$('meta[name="csrf-token"]').attr("content")}`;
-    data = data+'&_token='+$('meta[name="csrf-token"]').attr( "content" );
+    data = data + "&_token=" + $('meta[name="csrf-token"]').attr("content");
     $.ajax({
         type: "POST",
-        url: window.location.href+'create-lead',
+        url: window.location.href + "create-lead",
         data: data,
         success: function (data, status, xhr) {
             if (data.error) {
                 handleFormErrors(data.messages);
             } else {
                 // success lead form
-                $('.success_overlay').addClass('show');
+                $(".success_overlay").addClass("show");
                 $("#success").show();
                 $(".dz-preview").hide();
                 $("#regular-upload").hide();
@@ -287,11 +321,6 @@ $("#lead-form .submit").click(function (e) {
 });
 
 function isValidLeadForm() {
-    // 'first_name' => 'required|string|min:2',
-    // 'last_name' => 'required|string|min:2',
-    // 'phone' => 'required|regex:/^05\d\d{7}$/',
-    // 'email' => 'required|email',
-    // 'img' => 'required|url',
     var mail_pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var phone_pattern = /^05\d\d{7}$/;
     var errors = {};
@@ -346,12 +375,12 @@ function handleFormErrors(errors) {
     $.each(errors, function (key, valueObj) {
         switch (valueObj[0]) {
             case "invalid":
-                $("#"+key).addClass("error");
-                $("#"+key+'_error').text(fields_names[key]+' לא תקין');
+                $("#" + key).addClass("error");
+                $("#" + key + "_error").text(fields_names[key] + " לא תקין");
                 break;
             case "required":
-                $("#"+key).addClass("error");
-                $("#"+key+'_error').text(fields_names[key]+' שדה חובה');
+                $("#" + key).addClass("error");
+                $("#" + key + "_error").text(fields_names[key] + " שדה חובה");
                 break;
             default:
                 break;
@@ -383,20 +412,20 @@ function toggleMobileMenu(state) {
 }
 
 // INIT
-if( screen.width > 768 ){
-    $('.lead-wrapper').height($('#upload').height());
+if (screen.width > 768) {
+    $(".lead-wrapper").height($("#upload").height());
 }
 
 handleScroll(window.scrollY);
-$('#arrow-left').hide();
+$("#arrow-left").hide();
 $(".input").focus(function () {
     $(this).removeClass("error");
-    $('#'+$(this).attr("id")+'_error').text("");
+    $("#" + $(this).attr("id") + "_error").text("");
 });
 
 $(".checkbox").change(function () {
     $(this).removeClass("error");
-    $('#'+$(this).attr("id")+'_error').text("");
+    $("#" + $(this).attr("id") + "_error").text("");
 });
 
 $(".custom-file-upload").click(function () {
