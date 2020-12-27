@@ -329,6 +329,7 @@ body {
     background: #ff0022;
     position: absolute;
     bottom: 0;
+    outline: none;
   }
 
   #gallery {
