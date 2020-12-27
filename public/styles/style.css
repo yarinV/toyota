@@ -372,6 +372,9 @@ body {
     position: absolute;
     bottom: 0;
   }
+  #gallery .title {
+    font-size: 1.5rem;
+  }
   #gallery [class^=number-slide],
 #gallery [class*=" number-slide"] {
     background: grey;
@@ -714,6 +717,9 @@ body {
     text-align: center;
     padding-top: 3.66rem;
     position: relative;
+  }
+  #gallery .slick-track {
+    min-height: 550px;
   }
   #gallery .slide-wraper {
     width: 100%;

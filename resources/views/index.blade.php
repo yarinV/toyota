@@ -40,7 +40,7 @@
             </h1>
             <h1 class="mobile-only">חולמים על<br>לנד קרוזר חדש?<br><span class="red">קבלו אותו ישר<br>לסלון שלכם!</span>
             </h1>
-            <h2 class="desktop-only">השתתפו במשחק ואולי תזכו<br>בלנד קרוזר חלומי לסופ"ש כולל<br>דלק וטיול שטח מודרך</h2>
+            <h2 class="desktop-only">השתתפו בחוויית AR מדהימה ואולי<br>תזכו בלנד קרוזר חלומי לסופ"ש כולל<br>דלק וטיול שטח
             <h2 class="mobile-only">השתתפו בחוויית AR מדהימה ואולי<br>תזכו בלנד קרוזר חלומי לסופ"ש<br>כולל דלק וטיול שטח
                 מודרך</h2>
             <img src="{{ asset('assets/images/mobile-car-logo.png')}}" class="car-logo mobile-only" />
@@ -50,7 +50,7 @@
                 <div class="box">
                     <p class="title desktop-only"><span class="red">שלב 1 :</span>הורידו את האפליקציה</p>
                     <p class="title mobile-only">שלב 1 :הורידו את האפליקציה</p>
-                    <div class="content desktop-only">"לנד קרוזר 5 יבשות", אפליקציית משחק<br>ה- AR (מציאות רבודה) של
+                    <div class="content desktop-only">"לנד קרוזר 5 יבשות", אפליקציית ה- AR<br>(מציאות רבודה) של
                         טויוטה</div>
                     <div class="content mobile-only">"לנד קרוזר 5 יבשות", אפליקציית ה- AR<br>(מציאות רבודה) של טויוטה
                     </div>
@@ -147,6 +147,7 @@
             <img src="{{ asset('assets/images/arrow-left.png')}}" id="arrow-left" class="arrow arrow--left">
             <img src="{{ asset('assets/images/arrow-right.png')}}" id="arrow-right" class="arrow arrow--right">
         </div>
+        <div class="title desktop-only">מוכנים? צאו לדרך!</div>
     </div>
     <div class="blue-bar"></div>
     <div class="popup mobile-only"><img class="close-preview mobile-only" src="{{asset('assets/images/close-icon.png')}}" /><div class="preview"></div><div class="submit-button">אישור</div></div>

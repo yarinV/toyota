@@ -222,12 +222,12 @@ var realSlide;
 var slidesToShow = screen.width < 768 ? 2 : 4;
 var stHeight = 0;
 function createSlider() {
-    $("#keen-slider").on("init", function (slick) {
-        setTimeout(function () {
-            stHeight = $(".slick-track").height();
-            $(".slick-slide").css("height", stHeight + "px");
-        }, 100);
-    });
+    // $("#keen-slider").on("init", function (slick) {
+    //     setTimeout(function () {
+    //         stHeight = $(".slick-track").height();
+    //         $(".slick-slide").css("height", stHeight + "px");
+    //     }, 100);
+    // });
 
     // SLIDER
     $("#keen-slider").slick({

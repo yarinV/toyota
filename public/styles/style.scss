@@ -384,6 +384,8 @@ body {
             }
         }
 
+        .title{font-size: 1.5rem;}
+
         [class^="number-slide"],
         [class*=" number-slide"] {
             background: grey;
@@ -754,6 +756,10 @@ body {
         text-align: center;
         padding-top: 3.66rem;
         position: relative;
+
+        .slick-track {
+            min-height: 550px;
+        }
 
         .slide-wraper {
             width: 100%;
