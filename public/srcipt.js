@@ -74,29 +74,6 @@ myDropzone.on("sending", function (file, formData) {
     console.log(formData);
 });
 
-// INIT
-handleScroll(window.scrollY);
-$('#arrow-right').hide();
-$(".input").focus(function () {
-    $(this).removeClass("error");
-    $('#'+$(this).attr("id")+'_error').text("");
-});
-
-$(".checkbox").change(function () {
-    $(this).removeClass("error");
-    $('#'+$(this).attr("id")+'_error').text("");
-});
-
-$(".custom-file-upload").click(function () {
-    $(this).removeClass("error");
-    $("#img_error").text("");
-});
-
-$(".preview").click(function () {
-    $(this).removeClass("error");
-    $("#img_error").text("");
-});
-
 // image upload
 document.getElementById("file-upload").onchange = function () {
     var formData = new FormData();
@@ -129,7 +106,7 @@ document.getElementById("file-upload").onchange = function () {
 
 // get images build gallery
 var page = 1;
-var per_page = screen.width < 768 ? 4 : 6;
+var per_page = screen.width < 768 ? 8 : 6;
 var fetchedPages = {};
 var total_pages = 0;
 $.ajax({
@@ -181,7 +158,16 @@ function checkImageURL(imgurl) {
 var slider;
 var realSlide;
 var slidesToShow = screen.width < 768 ? 2 : 3;
+var stHeight = 0;
 function createSlider() {
+
+    $('#keen-slider').on('init', function(slick){
+        setTimeout(function(){
+            stHeight = $('.slick-track').height();
+            $('.slick-slide').css('height',stHeight + 'px' );
+        },100)
+    });
+
     // SLIDER
     $('#keen-slider').slick({
         rtl: true,
@@ -191,9 +177,9 @@ function createSlider() {
         nextArrow: $('#arrow-left'),
         slidesToShow: slidesToShow,
         slidesToScroll: 1,
+        mobileFirst:true
       });
 
-     // On before slide change
     $('#keen-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         
         if(nextSlide + slidesToShow == slick.slideCount ){
@@ -217,7 +203,7 @@ function createSlider() {
     });
 
     function getImageFromServer(){
-        var per_page = screen.width < 768 ? 4 : 6;
+        var per_page = screen.width < 768 ? 8 : 6;
         var go_to_page = ++page;
         
         if(fetchedPages[go_to_page] || go_to_page > total_pages){
@@ -237,6 +223,7 @@ function createSlider() {
                     fetchedPages[go_to_page] = true;
                     page = go_to_page;
                     generateSlides(data, per_page);
+                    $('.slick-slide').css('height',stHeight + 'px' );
                     checkImageURL();
                 }
             },
@@ -363,3 +350,26 @@ function toggleMobileMenu(state) {
         }, 500);
     }
 }
+
+// INIT
+handleScroll(window.scrollY);
+$('#arrow-right').hide();
+$(".input").focus(function () {
+    $(this).removeClass("error");
+    $('#'+$(this).attr("id")+'_error').text("");
+});
+
+$(".checkbox").change(function () {
+    $(this).removeClass("error");
+    $('#'+$(this).attr("id")+'_error').text("");
+});
+
+$(".custom-file-upload").click(function () {
+    $(this).removeClass("error");
+    $("#img_error").text("");
+});
+
+$(".preview").click(function () {
+    $(this).removeClass("error");
+    $("#img_error").text("");
+});
