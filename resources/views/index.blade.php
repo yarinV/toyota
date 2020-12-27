@@ -82,7 +82,7 @@
 
             <form id="upload" class="upload-form" enctype="multipart/form-data" method="post">
                 @csrf
-                <div class="preview desktop-only"></div>
+                <div class="preview desktop-only"><img class="upload-img" src="{{asset('./assets/images/upload.png')}}"/></div>
                 <label for="file-upload" class="custom-file-upload desktop-only">או העלו קובץ</label>
                 <label for="file-upload" class="custom-file-upload mobile-only"><img src="{{ asset('assets/images/mobile-upload.png')}}"/>העלו קובץ לגלריה > </label>
                 <input type="file" id="file-upload" name="file" accept="image/*">

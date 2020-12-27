@@ -51,7 +51,7 @@ body {
         padding: 20px 75px;
 
         &.black {
-            background: rgba(0, 0, 0, 0.4);
+            background: hsla(0, 0%, 0%, 0.4);
 
             .logo{
                 width: 4.5%;
@@ -159,18 +159,20 @@ body {
         }
     }
     #form {
-        // padding-bottom: 176px;
+        padding-top: 10em;
+        padding-bottom: 3em;
         .car-logo {
             display: inline-block;
             vertical-align: top;
             margin-left: 4%;
-            width: 15%;
+            width: 10%;
         }
         .title {
             display: inline-block;
-            font-size: 3em;
+            font-size: 1.9em;
             vertical-align: top;
             margin-left: 6%;
+            padding-top: 1%;
         }
 
         .error_message {
@@ -209,16 +211,28 @@ body {
             position: relative;
             width: 20%;
             .preview {
+                position: relative;
                 width: 100%;
-                height: 546px;
-                background-image: url("./assets/images/upload.png");
-                background-position: center center;
-                background-repeat: no-repeat;
+                height: 431px;
+                // background-image: url("./assets/images/upload.png");
+                // background-position: center center;
+                // background-repeat: no-repeat;
                 background-color: #fff;
                 // background-size: 70%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
+                .upload-img{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                    width: 70%;
+                    max-width: 160px;
+                }
 
                 &.error {
                     box-sizing: border-box;
@@ -258,24 +272,25 @@ body {
             }
             #file-upload {
                 opacity: 0;
+                position: absolute;
             }
+            #img_error{margin-bottom: 0;}
         }
         .lead-wrapper {
             display: inline-block;
             vertical-align: top;
             width: 22%;
             .form-text {
-                font-size: 1.9em;
+                font-size: 1.4em;
                 margin-bottom: 30px;
             }
 
             .input {
                 width: 100%;
                 padding: 0.45em 5px;
-                margin: 1em 0;
-                font-size: 2em;
+                margin: 0.5em 0;
+                font-size: 1.8em;
                 display: block;
-                border: 3px solid rgba(0, 0, 0, 0);
                 outline: none !important;
                 box-sizing: border-box;
                 &.error {
@@ -292,6 +307,11 @@ body {
                     outline: 3px solid #ff0022;
                 }
             }
+            
+            .approve-wrapper {
+                width: 140%;
+            }
+
             .custom-approve {
                 display: inline-block;
                 vertical-align: top;
@@ -417,7 +437,7 @@ body {
         }
 
         .arrow--disabled {
-            fill: rgba(255, 255, 255, 0.5);
+            fill: hsla(0, 0%, 100%, 0.5);
         }
     }
 }
@@ -461,7 +481,7 @@ body {
                 height: 100vh;
                 padding-top: 50px;
                 opacity: 0;
-                background: rgba(40, 40, 48, 0.98);
+                background:hsla(240, 9%, 17%, 0.98);
                 -webkit-transition: all 0.5s linear;
                 -moz-transition: all 0.5s linear;
                 -ms-transition: all 0.5s linear;
@@ -788,79 +808,66 @@ body {
 }
 
 @media only screen and (min-width: 1400px) and (max-width: 1600px) {
-    html {
-        // zoom: 0.85;
-        // transform: scale(0.85);
-        font-size: 15px;
-    }
+    html { font-size: 14px; }
     #form .lead-wrapper .custom-approve{    font-size: 1.3em;}
     #info .instructions { margin-top: 13%;}
+    #form .upload-form .preview{ height: 403px; }
 }
 
 @media only screen and (min-width: 1250px) and (max-width: 1400px) {
-    html {
-        // zoom: 0.8;
-        // transform: scale(0.8);
-        font-size: 14px;
-    }
+    html { font-size: 13px; }
     #form .lead-wrapper .custom-approve{    font-size: 1.25em;}
+    #form .upload-form .preview{ height: 371px; }
+    #form .lead-wrapper .form-text{    font-size: 1.2em;}
 }
 
 @media only screen and (min-width: 1100px) and (max-width: 1250px) {
-    html {
-        // zoom: 0.7;
-        // transform: scale(0.7);
-        font-size: 13px;
-    }
+    html { font-size: 13px; }
     #info .instructions { margin-top: 13%;}
-    #form .upload-form .preview{ height: 480px; }
+    #form .upload-form .preview{ height: 353px; }
     #form .lead-wrapper .checkbox{    width: 30px; height: 30px; margin-left: 2%;}
     #form .lead-wrapper .custom-approve{ font-size: 1.2em; }
     #form .title{    font-size: 1.7em;}
+    #form .lead-wrapper .input{    margin: 0.5em 0;}
+    #form .title{    font-size: 1.7em;     font-size: 1.7em;}
+    #form .lead-wrapper .form-text { font-size: 1em;}
+  
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1100px) {
-    html {
-        // zoom: 0.65;
-        // transform: scale(0.65);
-        font-size: 11px;
-    }
+    html { font-size: 11px; }
     #info .instructions { margin-top: 13%;}
-    #form .upload-form .preview{ height: 400px; }
+    #form .upload-form .preview{ height: 310px; }
     #form .lead-wrapper .checkbox{    width: 30px; height: 30px; margin-left: 2%;}
     #form .lead-wrapper .custom-approve{ font-size: 1.2em; }
-    #form .title{    font-size: 1.7em;}
+    #form .title{    font-size: 1.7em;     font-size: 1.7em;}
+    #form .lead-wrapper .form-text { font-size: 1em;}
+    #form .title{    font-size: 1.7em;     font-size: 1.7em;}
 }
 
 @media only screen and (min-width: 800px) and (max-width: 1000px) {
-    html {
-        // zoom: 0.5;
-        // transform: scale(0.5);
-        // font-size: 12px;
-        font-size: 11px;
-    }
+    html { font-size: 11px; }
     #info .instructions { margin-top: 13%;}
-    #form .upload-form .preview{ height: 300px; }
+    #form .upload-form .preview{ height: 267px; }
     #form .lead-wrapper .checkbox{    width: 20px; height: 20px; margin-left: 2%;}
     #form .lead-wrapper .custom-approve{ font-size: 1em; }
     #form .title{    font-size: 1.7em;}
     #form .lead-wrapper .input{    font-size: 1.5em;}
-    #form .lead-wrapper .form-text{font-size: 1.6em;}
+    #form .lead-wrapper .form-text{font-size: 1em;}
+    #form .title{    font-size: 1.7em;     font-size: 1.7em;}
+    #form{padding-bottom: 0em;}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 800px) {
-    html {
-        // zoom: 0.5;
-        // transform: scale(0.5);
-        font-size: 10px;
-    }
+    html { font-size: 10px; }
     #info .instructions { margin-top: 11%;}
-    #form .upload-form .preview{ height: 300px; }
+    #form .upload-form .preview{ height: 251px; }
     #form .lead-wrapper .checkbox{    width: 20px; height: 20px; margin-left: 2%;}
     #form .lead-wrapper .custom-approve{ font-size: 1em; }
     #form .title{    font-size: 1.7em;}
     #form .lead-wrapper .input{    font-size: 1.5em;}
-    #form .lead-wrapper .form-text{font-size: 1.6em;}
+    #form .lead-wrapper .form-text{font-size: 1em;}
+    #form .title{    font-size: 1.7em;     font-size: 1.7em;}
 }
 
 // MOBILE

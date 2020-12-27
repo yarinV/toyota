@@ -19,10 +19,10 @@ function smoothscroll(elemID) {
     if (screen.width < 768) {
         var scroll = document.querySelector("#" + elemID).offsetTop;
     } else {
-        // var scroll = document.querySelector("#" + elemID).offsetTop;
-        var scroll =
-            document.querySelector("#" + elemID).offsetTop -
-            document.querySelector("#header").offsetHeight;
+        var scroll = document.querySelector("#" + elemID).offsetTop;
+        // var scroll =
+        //     document.querySelector("#" + elemID).offsetTop -
+        //     document.querySelector("#header").offsetHeight;
     }
     window.scrollTo({
         top: scroll,
@@ -59,7 +59,11 @@ function handleScroll(position) {
 }
 
 window.addEventListener("scroll", function(event) {
-    debounce(handleScroll, this.scrollY, 10);
+    var position = this.scrollY;
+    if(!position){
+        position = document.documentElement.scrollTop;
+    }
+    debounce(handleScroll, position, 10);
 });
 
 function debounce(method, props, delay) {
