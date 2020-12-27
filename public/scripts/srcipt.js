@@ -315,6 +315,7 @@ $("#lead-form .submit").click(function (e) {
                 $("#success").show();
                 $(".dz-preview").hide();
                 $("#regular-upload").hide();
+                $(".thumbnail").hide();
             }
         },
     });
