@@ -125,8 +125,7 @@ body {
     display: flex;
     margin-top: 15%;
     color: #000;
-    min-height: 350px;
-    padding-top: 3%;
+    padding: 5% 0;
     box-sizing: border-box;
   }
   #info .instructions .box {
@@ -180,8 +179,10 @@ body {
     padding-top: 1%;
   }
   #form .error_message {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    position: absolute;
+    bottom: -1rem;
+    right: 3px;
   }
   #form .success_overlay {
     position: absolute;
@@ -230,7 +231,7 @@ body {
   }
   #form .upload-form .preview.error {
     box-sizing: border-box;
-    border: 3px solid red;
+    border: 2px solid red;
   }
   #form .upload-form .dz-preview {
     position: absolute;
@@ -260,7 +261,7 @@ body {
     box-sizing: border-box;
   }
   #form .upload-form .custom-file-upload.error {
-    border: 3px solid red;
+    border: 2px solid red;
   }
   #form .upload-form #file-upload {
     opacity: 0;
@@ -279,18 +280,20 @@ body {
     font-size: 1.7rem;
     margin-bottom: 1rem;
   }
-  #form .lead-wrapper .input {
+  #form .lead-wrapper .input-wrapper {
+    position: relative;
+  }
+  #form .lead-wrapper .input-wrapper .input {
     width: 100%;
-    padding: 0.45em 5px;
-    margin: 0.5em 0;
+    padding: 0.4em 5px;
+    margin: 0.7em 0;
     font-size: 1.8rem;
     display: block;
     outline: none !important;
     box-sizing: border-box;
   }
-  #form .lead-wrapper .input.error {
-    border: 3px solid #ff0022;
-    margin: 0.5em 0;
+  #form .lead-wrapper .input-wrapper .input.error {
+    border: 2px solid #ff0022;
   }
   #form .lead-wrapper .checkbox {
     display: inline-block;
@@ -299,10 +302,13 @@ body {
     margin-left: 4%;
   }
   #form .lead-wrapper .checkbox.error {
-    outline: 3px solid #ff0022;
+    outline: 2px solid #ff0022;
   }
   #form .lead-wrapper .approve-wrapper {
     width: 140%;
+    position: relative;
+    margin-bottom: 2em;
+    margin-top: 1.7em;
   }
   #form .lead-wrapper .custom-approve {
     display: inline-block;
@@ -772,7 +778,7 @@ body {
   }
 
   #form .upload-form .preview {
-    height: 403px;
+    height: 420px;
   }
 }
 @media only screen and (min-width: 1250px) and (max-width: 1400px) {
@@ -791,6 +797,10 @@ body {
   #form .lead-wrapper .form-text {
     font-size: 1.2rem;
   }
+
+  #info .instructions {
+    margin-top: 10%;
+  }
 }
 @media only screen and (min-width: 1100px) and (max-width: 1250px) {
   html {
@@ -798,7 +808,7 @@ body {
   }
 
   #info .instructions {
-    margin-top: 13%;
+    margin-top: 6%;
   }
 
   #form .upload-form .preview {
@@ -838,7 +848,7 @@ body {
   }
 
   #info .instructions {
-    margin-top: 13%;
+    margin-top: 6%;
   }
 
   #form .upload-form .preview {
@@ -875,11 +885,11 @@ body {
   }
 
   #info .instructions {
-    margin-top: 13%;
+    margin-top: 6%;
   }
 
   #form .upload-form .preview {
-    height: 267px;
+    height: 280px;
   }
 
   #form .lead-wrapper .checkbox {
@@ -910,16 +920,16 @@ body {
   }
 
   #form {
-    padding-bottom: 0rem;
+    padding-bottom: 2rem;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 800px) {
   html {
-    font-size: 10px !important;
+    font-size: 9px !important;
   }
 
   #info .instructions {
-    margin-top: 11%;
+    margin-top: 4%;
   }
 
   #form .upload-form .preview {
@@ -951,6 +961,10 @@ body {
   #form .title {
     font-size: 1.7rem;
     font-size: 1.7rem;
+  }
+
+  #form {
+    padding-bottom: 1.5rem;
   }
 }
 @media only screen and (min-width: 700px) and (max-width: 768px) {

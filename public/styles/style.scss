@@ -119,8 +119,8 @@ body {
             display: flex;
             margin-top: 15%;
             color: #000;
-            min-height: 350px;
-            padding-top: 3%;
+            // min-height: 350px;
+            padding: 5% 0;
             box-sizing: border-box;
 
             .box {
@@ -175,8 +175,10 @@ body {
         }
 
         .error_message {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            position: absolute;
+            bottom: -1rem;
+            right: 3px;
         }
 
         .success_overlay {
@@ -235,7 +237,7 @@ body {
 
                 &.error {
                     box-sizing: border-box;
-                    border: 3px solid red;
+                    border: 2px solid red;
                 }
             }
             .dz-preview {
@@ -267,7 +269,7 @@ body {
                 padding: 0.6em 0;
                 box-sizing: border-box;
                 &.error {
-                    border: 3px solid red;
+                    border: 2px solid red;
                 }
             }
             #file-upload {
@@ -287,18 +289,19 @@ body {
                 font-size: 1.7rem;
                 margin-bottom: 1rem;
             }
-
-            .input {
-                width: 100%;
-                padding: 0.45em 5px;
-                margin: 0.5em 0;
-                font-size: 1.8rem;
-                display: block;
-                outline: none !important;
-                box-sizing: border-box;
-                &.error {
-                    border: 3px solid #ff0022;
-                    margin: 0.5em 0;
+            .input-wrapper {
+                position: relative;
+                .input {
+                    width: 100%;
+                    padding: 0.4em 5px;
+                    margin: 0.7em 0;
+                    font-size: 1.8rem;
+                    display: block;
+                    outline: none !important;
+                    box-sizing: border-box;
+                    &.error {
+                        border: 2px solid #ff0022;
+                    }
                 }
             }
             .checkbox {
@@ -307,12 +310,15 @@ body {
                 height: 42px;
                 margin-left: 4%;
                 &.error {
-                    outline: 3px solid #ff0022;
+                    outline: 2px solid #ff0022;
                 }
             }
 
             .approve-wrapper {
                 width: 140%;
+                position: relative;
+                margin-bottom: 2em;
+                margin-top: 1.7em;
             }
 
             .custom-approve {
@@ -824,7 +830,7 @@ body {
         margin-top: 13%;
     }
     #form .upload-form .preview {
-        height: 403px;
+        height: 420px;
     }
 }
 
@@ -841,6 +847,9 @@ body {
     #form .lead-wrapper .form-text {
         font-size: 1.2rem;
     }
+    #info .instructions {
+        margin-top: 10%;
+    }
 }
 
 @media only screen and (min-width: 1100px) and (max-width: 1250px) {
@@ -848,7 +857,7 @@ body {
         font-size: 13px !important;
     }
     #info .instructions {
-        margin-top: 13%;
+        margin-top: 6%;
     }
     #form .upload-form .preview {
         height: 353px;
@@ -881,7 +890,7 @@ body {
         font-size: 11px !important;
     }
     #info .instructions {
-        margin-top: 13%;
+        margin-top: 6%;
     }
     #form .upload-form .preview {
         height: 310px;
@@ -912,10 +921,10 @@ body {
         font-size: 11px !important;
     }
     #info .instructions {
-        margin-top: 13%;
+        margin-top: 6%;
     }
     #form .upload-form .preview {
-        height: 267px;
+        height: 280px;
     }
     #form .lead-wrapper .checkbox {
         width: 20px;
@@ -939,16 +948,16 @@ body {
         font-size: 1.7rem;
     }
     #form {
-        padding-bottom: 0rem;
+        padding-bottom: 2rem;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 800px) {
     html {
-        font-size: 10px !important;
+        font-size: 9px !important;
     }
     #info .instructions {
-        margin-top: 11%;
+        margin-top: 4%;
     }
     #form .upload-form .preview {
         height: 251px;
@@ -973,6 +982,9 @@ body {
     #form .title {
         font-size: 1.7rem;
         font-size: 1.7rem;
+    }
+    #form {
+        padding-bottom: 1.5rem;
     }
 }
 
