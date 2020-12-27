@@ -323,7 +323,6 @@ body {
             .keen-slider__slide {
                 display: flex;
                 flex-direction: column;
-                // padding: 0 1em;
                 position: relative;
             }
 
@@ -435,20 +434,20 @@ body {
         display: none !important;
     }
     header {
-        height: 100px;
         width: 100%;
         direction: rtl;
         .red-bar {
             width: 57.8125%;
             height: 15px;
             background-color: #ff0022;
-            margin-bottom: 45px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         ul {
             padding: 0 35px;
             box-sizing: border-box;
             z-index: -1;
+            display: flex;
+            align-items: center;
             .hamburger {
                 z-index: 0;
                 width: 10%;
@@ -491,7 +490,7 @@ body {
                 margin-bottom: 30%;
             }
             .logo {
-                float: left;
+                margin-right: auto;
                 width: 15%;
             }
             .menu-item {
@@ -523,6 +522,7 @@ body {
         direction: rtl;
     }
     #info {
+        margin-top: 0.5em;
         text-align: center;
         h1 {
             font-size: 1.66rem;
@@ -630,7 +630,7 @@ body {
             width: 80%;
             margin: auto;
             color: #fff;
-            font-size: 1.73rem;
+            font-size: 1.3rem;
             padding: 15px 0;
             display: flex;
             justify-content: center;
@@ -683,7 +683,7 @@ body {
 
         .custom-approve {
             text-align: right;
-            font-size: 1.25rem;
+            font-size: 1rem;
         }
 
         .submit {
@@ -731,17 +731,34 @@ body {
             margin-bottom: 0.3em;
             position: relative;
             .keen-slider__slide {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+
+                // img {
+                //     display: block;
+                //     width: 100%;
+                // }
+
                 img {
                     display: block;
+                    // margin: auto;
                     width: 100%;
+                    // max-height: 35rem;
+                    padding-bottom: 38.5px;
+                    box-sizing: border-box;
                 }
-            }
-            .user_name {
-                width: 100%;
-                background-color: #ffffff;
-                color: #000000;
-                text-align: center;
-                padding: 0.5rem 0;
+                .user_name {
+                    width: 100%;
+                    background-color: #ffffff;
+                    color: #000000;
+                    text-align: center;
+                    font-size: 1rem;
+                    padding: 0.5em 0;
+                    margin: auto;
+                    position: absolute;
+                    bottom: 3px;
+                }
             }
 
             #arrow-left {

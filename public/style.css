@@ -414,7 +414,6 @@ body {
   }
 
   header {
-    height: 100px;
     width: 100%;
     direction: rtl;
   }
@@ -422,13 +421,14 @@ body {
     width: 57.8125%;
     height: 15px;
     background-color: #ff0022;
-    margin-bottom: 45px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
   header ul {
     padding: 0 35px;
     box-sizing: border-box;
     z-index: -1;
+    display: flex;
+    align-items: center;
   }
   header ul .hamburger {
     z-index: 0;
@@ -469,7 +469,7 @@ body {
     margin-bottom: 30%;
   }
   header ul .logo {
-    float: left;
+    margin-right: auto;
     width: 15%;
   }
   header ul .menu-item {
@@ -502,6 +502,7 @@ body {
   }
 
   #info {
+    margin-top: 0.5em;
     text-align: center;
   }
   #info h1 {
@@ -601,7 +602,7 @@ body {
     width: 80%;
     margin: auto;
     color: #fff;
-    font-size: 1.73rem;
+    font-size: 1.3rem;
     padding: 15px 0;
     display: flex;
     justify-content: center;
@@ -649,7 +650,7 @@ body {
   }
   #form .custom-approve {
     text-align: right;
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   #form .submit {
     background-color: #ff0022;
@@ -692,16 +693,27 @@ body {
     margin-bottom: 0.3em;
     position: relative;
   }
+  #gallery .navigation-wrapper .keen-slider__slide {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
   #gallery .navigation-wrapper .keen-slider__slide img {
     display: block;
     width: 100%;
+    padding-bottom: 38.5px;
+    box-sizing: border-box;
   }
-  #gallery .navigation-wrapper .user_name {
+  #gallery .navigation-wrapper .keen-slider__slide .user_name {
     width: 100%;
     background-color: #ffffff;
     color: #000000;
     text-align: center;
-    padding: 0.5rem 0;
+    font-size: 1rem;
+    padding: 0.5em 0;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
   }
   #gallery .navigation-wrapper #arrow-left {
     position: absolute;
